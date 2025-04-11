@@ -86,6 +86,9 @@ pip install -r requirements.txt
    pip install -r requirements.txt
    ```
 4. Run the ETL scripts in the `src/etl/` directory to process the data.
+   ```
+   python src/etl/etl_dataset.py
+   ```
 
 ## Repository contents
 - **`data/`**: Contains raw and processed data files.
