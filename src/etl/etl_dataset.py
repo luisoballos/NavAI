@@ -3,7 +3,7 @@ import pandas as pd
 import webbrowser
 import folium
 
-gdf20 = gpd.read_file("C:/Users/luiso/OneDrive/Documents/Bootkampf/NavAI/data/raw/Accesibilidad_2020/Accesibilidad.shp")
+gdf20 = gpd.read_file("C:/Users/luiso/OneDrive/Documents/Bootkampf/NavAI/data/raw/Accesibilidad_2021/Accesibilidad.shp")
 gdf21 = gpd.read_file("C:/Users/luiso/OneDrive/Documents/Bootkampf/NavAI/data/raw/Accesibilidad_2021/ACCESIBILIDAD_ACERAS_2021.shp")
 gdf24 = gpd.read_file("C:/Users/luiso/OneDrive/Documents/Bootkampf/NavAI/data/raw/Accesibilidad_2024/ACCESIBILIDAD_ACERAS_2024.shp")
 
