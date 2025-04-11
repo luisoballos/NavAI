@@ -2,10 +2,11 @@ import geopandas as gpd
 import pandas as pd
 import webbrowser
 import folium
+import os
 
-gdf20 = gpd.read_file("C:/Users/luiso/OneDrive/Documents/Bootkampf/NavAI/data/raw/Accesibilidad_2021/Accesibilidad.shp")
-gdf21 = gpd.read_file("C:/Users/luiso/OneDrive/Documents/Bootkampf/NavAI/data/raw/Accesibilidad_2021/ACCESIBILIDAD_ACERAS_2021.shp")
-gdf24 = gpd.read_file("C:/Users/luiso/OneDrive/Documents/Bootkampf/NavAI/data/raw/Accesibilidad_2024/ACCESIBILIDAD_ACERAS_2024.shp")
+gdf20 = gpd.read_file("data/raw/Accesibilidad_2020/Accesibilidad.shp")
+gdf21 = gpd.read_file("data/raw/Accesibilidad_2021/ACCESIBILIDAD_ACERAS_2021.shp")
+gdf24 = gpd.read_file("data/raw/Accesibilidad_2024/ACCESIBILIDAD_ACERAS_2024.shp")
 
 ### Transform ###
 gdf20.columns = [i.upper() for i in gdf20.columns]
@@ -66,20 +67,14 @@ gdf = gpd.GeoDataFrame(
 )
 
 # Save CSV
-gdf.to_csv('../../data/processed/dataset.csv', index=False)
+gdf.to_csv('data/processed/dataset.csv', index=False)
 
 # Centrar el mapa en Madrid
 madrid_map = folium.Map(location=[40.4168, -3.7038], zoom_start=11)
 
 # Añadir capa GeoJSON
 folium.GeoJson(gdf).add_to(madrid_map)
-madrid_map.save("../../img/madrid_map.html")
-webbrowser.open("madrid_map.html")
-import webbrowser
-import os
-
-file_path = os.path.abspath("madrid_map.html")
-webbrowser.get(using='windows-default').open(f"file://{file_path}")
+madrid_map.save("img/madrid_map.html")
 
 ### EDA ###
 gdf['DISTRICT'].unique()
