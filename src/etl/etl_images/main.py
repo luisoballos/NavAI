@@ -13,9 +13,10 @@ import matplotlib.image as mpimg
 SVS_API = "https://maps.googleapis.com/maps/api/streetview"                 # Street View Static API
 ROUTES_API = "https://routes.googleapis.com/directions/v2:computeRoutes"    # Directions API
 
-API_KEY = "AIzaSyD532LUh-ITqOYVNa59CMlief36hc_lkj8"
-
 TRAVEL_MODE = "WALK"
+
+# Import API KEY
+API_KEY = open('../API_KEY.txt', 'r').read().strip('\n')
 
 # Fetch Madrid's coordinates using geopy
 geolocator = Nominatim(user_agent="madrid_locator")
