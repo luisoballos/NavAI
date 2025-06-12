@@ -1,0 +1,103 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: white;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+.app-title {
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 50px;
+  letter-spacing: 5px;
+  color: #333;
+}
+
+.search-section {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+
+.search-input-group {
+  margin-bottom: 15px;
+}
+
+.search-input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1.1em;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.search-button {
+  background-color: #007bff; /* */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.impairment-section {
+  width: 100%;
+  max-width: 400px;
+}
+
+.impairment-title {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.impairment-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.impairment-button {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.impairment-button img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.impairment-button.active {
+  border-color: #007bff;
+  background-color: #e6f2ff;
+}
+
+.impairment-button.active img {
+  filter: none;
+}

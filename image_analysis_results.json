@@ -1,0 +1,917 @@
+[
+    {
+        "has_crosswalk": false,
+        "latitude": 40.405350000000006,
+        "longitude": -3.6823500000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.405260000000006,
+        "longitude": -3.6828800000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40514,
+        "longitude": -3.68291
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.405150000000006,
+        "longitude": -3.6829600000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.405120000000004,
+        "longitude": -3.6829600000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.405150000000006,
+        "longitude": -3.6830700000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40518,
+        "longitude": -3.68304
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.405190000000005,
+        "longitude": -3.6831000000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40516,
+        "longitude": -3.6831300000000002
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.405710000000006,
+        "longitude": -3.68514
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40569,
+        "longitude": -3.68515
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.4057,
+        "longitude": -3.6851000000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40579,
+        "longitude": -3.68509
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40635,
+        "longitude": -3.6852400000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40634,
+        "longitude": -3.6851100000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40655,
+        "longitude": -3.6851800000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.406490000000005,
+        "longitude": -3.6857300000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40652,
+        "longitude": -3.6864000000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.406620000000004,
+        "longitude": -3.68699
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.406780000000005,
+        "longitude": -3.6876100000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40702,
+        "longitude": -3.6882300000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40713,
+        "longitude": -3.6884
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.407230000000006,
+        "longitude": -3.6886500000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40735,
+        "longitude": -3.68887
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.407410000000006,
+        "longitude": -3.68874
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40748000000001,
+        "longitude": -3.6888600000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.407430000000005,
+        "longitude": -3.6889600000000002
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40757,
+        "longitude": -3.6892000000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40766,
+        "longitude": -3.6894000000000005
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40776,
+        "longitude": -3.68949
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.408080000000005,
+        "longitude": -3.6899800000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40811,
+        "longitude": -3.6899400000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.408150000000006,
+        "longitude": -3.6900600000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40814,
+        "longitude": -3.6900700000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.408440000000006,
+        "longitude": -3.69057
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40849,
+        "longitude": -3.6906100000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.4086,
+        "longitude": -3.69078
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.408640000000005,
+        "longitude": -3.6908100000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.408620000000006,
+        "longitude": -3.6908800000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40885,
+        "longitude": -3.6912700000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.4089,
+        "longitude": -3.6912900000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.409470000000006,
+        "longitude": -3.6918400000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40972,
+        "longitude": -3.6920400000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.40982,
+        "longitude": -3.6921000000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.409740000000006,
+        "longitude": -3.69255
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.409560000000006,
+        "longitude": -3.6925600000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.4095,
+        "longitude": -3.6926600000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40968,
+        "longitude": -3.69316
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.409780000000005,
+        "longitude": -3.6933400000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.40981,
+        "longitude": -3.6935400000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41001,
+        "longitude": -3.6939800000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41004,
+        "longitude": -3.6940500000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41008,
+        "longitude": -3.6941300000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.410500000000006,
+        "longitude": -3.69512
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41051,
+        "longitude": -3.69511
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41053,
+        "longitude": -3.6951500000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41051,
+        "longitude": -3.6951600000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.410700000000006,
+        "longitude": -3.6956
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41071,
+        "longitude": -3.69566
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.411260000000006,
+        "longitude": -3.69675
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41127,
+        "longitude": -3.69682
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41187,
+        "longitude": -3.6980100000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.411910000000006,
+        "longitude": -3.6981100000000002
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41207,
+        "longitude": -3.6983800000000002
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.412670000000006,
+        "longitude": -3.6995400000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41295,
+        "longitude": -3.7000900000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41355,
+        "longitude": -3.70162
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41357,
+        "longitude": -3.7016100000000005
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.4136,
+        "longitude": -3.7017300000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.413590000000006,
+        "longitude": -3.7017300000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41416,
+        "longitude": -3.70338
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414210000000004,
+        "longitude": -3.7033500000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41422,
+        "longitude": -3.70339
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41418,
+        "longitude": -3.7034300000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41422,
+        "longitude": -3.70353
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.414460000000005,
+        "longitude": -3.7033300000000002
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.414570000000005,
+        "longitude": -3.70332
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414660000000005,
+        "longitude": -3.7033700000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.415090000000006,
+        "longitude": -3.70324
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.415380000000006,
+        "longitude": -3.7032200000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41583000000001,
+        "longitude": -3.7032200000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41673,
+        "longitude": -3.7032900000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41671,
+        "longitude": -3.7034800000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.4172,
+        "longitude": -3.7035500000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41761,
+        "longitude": -3.7036300000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41787,
+        "longitude": -3.7038300000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41819,
+        "longitude": -3.70414
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41834,
+        "longitude": -3.7043000000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.418600000000005,
+        "longitude": -3.7046300000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41874000000001,
+        "longitude": -3.7047600000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41895,
+        "longitude": -3.7049000000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41942,
+        "longitude": -3.70441
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.419450000000005,
+        "longitude": -3.70447
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41434,
+        "longitude": -3.7038300000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.414350000000006,
+        "longitude": -3.7038900000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41438,
+        "longitude": -3.70386
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414390000000004,
+        "longitude": -3.7039000000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414370000000005,
+        "longitude": -3.70393
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414590000000004,
+        "longitude": -3.70474
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414570000000005,
+        "longitude": -3.7048
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41480000000001,
+        "longitude": -3.7055100000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41485,
+        "longitude": -3.7056600000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414860000000004,
+        "longitude": -3.70583
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.414910000000006,
+        "longitude": -3.70582
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41518000000001,
+        "longitude": -3.7067200000000002
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41517,
+        "longitude": -3.7070600000000002
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41537,
+        "longitude": -3.7070800000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41537,
+        "longitude": -3.7070000000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.405350000000006,
+        "longitude": -3.68231
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41514,
+        "longitude": -3.7066000000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41684,
+        "longitude": -3.7039000000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.416880000000006,
+        "longitude": -3.7039700000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41709,
+        "longitude": -3.7040200000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.417370000000005,
+        "longitude": -3.7042200000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.417880000000004,
+        "longitude": -3.7045600000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41868,
+        "longitude": -3.7051100000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.419430000000006,
+        "longitude": -3.7056000000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.419610000000006,
+        "longitude": -3.7057400000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.419610000000006,
+        "longitude": -3.7059500000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42011,
+        "longitude": -3.70589
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.4202,
+        "longitude": -3.7061
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42024000000001,
+        "longitude": -3.7060600000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.420770000000005,
+        "longitude": -3.7068900000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42083,
+        "longitude": -3.7069300000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.4208,
+        "longitude": -3.70705
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.42085,
+        "longitude": -3.7071500000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42087,
+        "longitude": -3.7070700000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.420970000000004,
+        "longitude": -3.7072200000000004
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.42107,
+        "longitude": -3.70732
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42143,
+        "longitude": -3.7078900000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42136,
+        "longitude": -3.70792
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.421400000000006,
+        "longitude": -3.70806
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.421490000000006,
+        "longitude": -3.7080200000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42192,
+        "longitude": -3.7086900000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42231,
+        "longitude": -3.70928
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.422340000000005,
+        "longitude": -3.7093700000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42286,
+        "longitude": -3.7101900000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.422830000000005,
+        "longitude": -3.71023
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.422880000000006,
+        "longitude": -3.71031
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.42291,
+        "longitude": -3.71029
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.423260000000006,
+        "longitude": -3.71085
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42327,
+        "longitude": -3.71092
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.4234,
+        "longitude": -3.71111
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.423390000000005,
+        "longitude": -3.7111300000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.42344000000001,
+        "longitude": -3.71118
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.423120000000004,
+        "longitude": -3.7117600000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.4232,
+        "longitude": -3.7119000000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.423170000000006,
+        "longitude": -3.7119600000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.423120000000004,
+        "longitude": -3.71227
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42293,
+        "longitude": -3.71294
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.422900000000006,
+        "longitude": -3.7131100000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.422880000000006,
+        "longitude": -3.7133800000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42277,
+        "longitude": -3.7133900000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42278,
+        "longitude": -3.7132700000000005
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.423030000000004,
+        "longitude": -3.7125500000000002
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42313,
+        "longitude": -3.7122300000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42324,
+        "longitude": -3.7108300000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.4223,
+        "longitude": -3.7092600000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.421400000000006,
+        "longitude": -3.7080500000000005
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.42022,
+        "longitude": -3.7059800000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.420190000000005,
+        "longitude": -3.7055800000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.4202,
+        "longitude": -3.70535
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.42016,
+        "longitude": -3.7050600000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.42015000000001,
+        "longitude": -3.70487
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.419760000000004,
+        "longitude": -3.7049000000000003
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41964,
+        "longitude": -3.7047900000000005
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41949,
+        "longitude": -3.70461
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41948,
+        "longitude": -3.70453
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.4194,
+        "longitude": -3.7043800000000005
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.419320000000006,
+        "longitude": -3.70433
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41919,
+        "longitude": -3.70419
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.419140000000006,
+        "longitude": -3.7041000000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.418890000000005,
+        "longitude": -3.7038
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.418820000000004,
+        "longitude": -3.70379
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.4187,
+        "longitude": -3.7036800000000003
+    },
+    {
+        "has_crosswalk": true,
+        "latitude": 40.41843,
+        "longitude": -3.70305
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41825,
+        "longitude": -3.7024900000000005
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41859,
+        "longitude": -3.7023
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.418380000000006,
+        "longitude": -3.7049100000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41733,
+        "longitude": -3.7042
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41687,
+        "longitude": -3.7039600000000004
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.41668000000001,
+        "longitude": -3.70386
+    },
+    {
+        "has_crosswalk": false,
+        "latitude": 40.416760000000004,
+        "longitude": -3.7038300000000004
+    }
+]
