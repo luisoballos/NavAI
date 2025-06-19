@@ -1,4 +1,4 @@
-# NavAI: 
+# NavAI: Accessible Urban Navigation for Madrid
 
 NavAI is an innovative application designed to enhance urban accessibility for people with disabilities in Madrid. By leveraging advanced AI (Computer Vision) and comprehensive geospatial data, NavAI provides real-time, accessible route navigation, addressing the critical need for inclusive urban mobility. Our core objective is to empower individuals with disabilities by offering reliable, detailed, and personalized navigation experiences, and to provide urban planners with actionable insights for infrastructure improvement.
 
@@ -6,88 +6,90 @@ NavAI is an innovative application designed to enhance urban accessibility for p
 
 NavAI offers a unique set of functionalities for both end-users and urban development stakeholders:
 
-* **Intelligent Accessible Route Generation**:
+* **Accessible Route Generation**:
     * Utilizes Google's Routes API for base routing.
-    * **Integrates custom accessibility data** (sidewalk width, buzzer locations, construction zones) to create optimal accessible paths.
-    * **NEW:** **Real-time Crosswalk Detection via AI (OpenAI Vision API)**: Analyzes Google Street View images along the route to identify and confirm the presence of crosswalks, enhancing route accuracy.
-    * **NEW:** **Dynamic Accessibility Scoring**: Each generated route receives an accessibility score (0-100) based on critical criteria:
-        * **Percentage of Crosswalks with Acoustic Buzzers**: Reflects auditory guidance availability.
-        * **Average Sidewalk Width**: Ensures pathways meet accessibility standards (e.g., minimum 1.5 meters).
+    * Integrates custom accessibility data (sidewalk width, buzzer locations, construction zones) to create optimal accessible paths.
+    * Real-time crosswalk detection via AI (Google Gemini API): Analyzes Google Street View images along the route to identify and confirm the presence of crosswalks, enhancing route accuracy.
+    * Dynamic accessibility scoring: Each generated route receives an accessibility score (0-100) based on critical criteria:
+        * Percentage of crosswalks with acoustic buzzers: Reflects auditory guidance availability.
+        * Average sidewalk width: Ensures pathways meet accessibility standards (e.g., minimum 1.5 meters).
 
-* **Interactive Map Visualization (Folium)**:
+* **Interactive Map Visualization (React-Leaflet)**:
     * Displays the generated accessible route.
     * Highlights key accessibility features: **buzzers, sidewalk widths, construction zones, and detected crosswalks**.
-    * **NEW:** Shows the user's current location on the map for real-time guidance.
+    * Shows the route's start and end markers.
+    * **Accessibility Legend**: Provides a clear visual guide to route segment accessibility (Fully Accessible, Partially Accessible, Poorly Accessible, Unknown).
 
 * **User-Centric Frontend (React & Vite)**:
-    * **Intuitive User Interface**: Allows users to set origin, destination, and select specific impairment types (e.g., wheelchair, visual impairment).
-    * **Seamless User Flow**: Includes dedicated `Home`, `Loading`, and `Navigation` (map view) pages for a smooth user experience.
-    * **Dynamic Data Display**: Presents the calculated accessibility score directly within the navigation interface.
+    * Intuitive User Interface: Allows users to set origin, destination, and select specific impairment types (e.g., wheelchair, visual impairment).
+    * Seamless User Flow: Includes dedicated `Home`, `Loading`, and `Navigation` (map view) pages for a smooth user experience.
+    * Dynamic Data Display: Presents the calculated accessibility score directly within the navigation interface.
 
 * **Urban Planning Insights (Backend Analytics)**:
     * Analyzes and visualizes improvements in accessibility infrastructure across Madrid.
-    * **Year and district selector**: Filter data for targeted analysis.
-    * **KPI progress metrics**: Track key performance indicators for accessibility improvements over time.
-    * **Comparative analysis**: Compare changes in accessibility between selected years.
-    * **Interactive maps**: Visualize the geographical distribution of accessibility improvements based on historical data.
+    * Year and district selector: Filter data for targeted analysis.
+    * KPI progress metrics: Track key performance indicators for accessibility improvements over time.
+    * Comparative analysis: Compare changes in accessibility between selected years.
+    * Interactive maps: Visualize the geographical distribution of accessibility improvements based on historical data.
 
 ## Project Structure
 
-The project is structured into distinct Python (backend/data processing) and React (frontend) components:
+The project is structured into distinct Python (backend/data processing) and React (frontend) components. The frontend interacts with the backend via API calls.
 
 ```
-├── data/                       # Raw and processed geospatial data files
-│   ├── processed/              # Cleaned and standardized GeoJSON data
-├── public/                     # Static assets for the React app, including generated HTML map and JSON score
-│   ├── route_map.html          # Interactive map generated by Python
-│   └── accessibility_score.json# Accessibility score calculated by Python
-│   └── (icons for React app)   # e.g., wheelchair-icon.svg, blind-icon.svg, settings-icon.svg
-├── notebooks/                  # Jupyter Notebooks for exploratory analysis and testing
-├── src/                        # Source code for both Python backend and React frontend
-│   ├── etl/                    # Python scripts for ETL processes (data fetching, cleaning, transformation)
-│   │   ├── get_route.py        # Fetches route polyline from Google Routes API
-│   │   ├── get_images.py       # Fetches Street View images
-│   │   └── etl_dataset.py      # Processes buzzers, constructions, and sidewalks datasets
+├── data/                        # Geospatial data files from Ayuntamiento de Madrid
+│   ├── processed/               # Cleaned and standardized GeoJSON data
+├── public/                      # Static assets for the React app, including generated HTML map and JSON score
+│   └── (icons for React app)    # blind-icon.png and wheelchair-icon.png
+├── src/                         # Source code for both Python backend and React frontend
+│   ├── etl/                     # Python scripts for ETL processes (data fetching, cleaning, transformation)
+│   │   ├── get_route.py         # Fetches route polyline from Google Routes API
+│   │   ├── get_images.py        # Fetches Street View images
+│   │   └── etl_dataset.py       # Processes buzzers, constructions, and sidewalks datasets
 │   │   └── (other ETL related files)
-│   ├── image_analysis.py       # Python script for AI-powered image analysis (crosswalk detection)
-│   ├── plot.py                 # Python script to generate the Folium map HTML
-│   ├── main.py                 # Orchestrates the backend logic: route generation, image analysis, accessibility evaluation, and map/score output
-│   │
-│   ├── components/             # Reusable React UI components (e.g., Navbar, Footer, Navegation - for map display)
-│   ├── pages/                  # React app pages (e.g., Home, Loading, ErrorPage, Layout)
+│   ├── image_analysis.py        # Python script for AI-powered image analysis (crosswalk detection)
+and map/score output
+│   ├── components/             # Reusable React UI components (e.g., Navbar, Footer, MapLegend)
+│   ├── pages/                  # React app pages (e.g., Home, Loading, Navegation, ErrorPage, Layout)
 │   ├── routes.jsx              # React Router setup for navigation
 │   ├── index.css               # Global CSS styles
-│   ├── main.jsx                # React app entry point
-│   ├── App.jsx                 # Main React application component
-│   └── API_KEY.txt             # Placeholder for API keys
+│   └── main.jsx                # React app entry point
+├── API_KEY.txt             # Placeholder for API keys
 ├── requirements.txt            # Python project dependencies
 ├── package.json                # Node.js/Vite project dependencies
 ├── .gitignore                  # Files and directories to ignore in version control
 └── README.md                   # Project documentation
 ```
 
-## ETL Process
+## Backend Overview
+The backend, built with Flask, serves as the brain of NavAI. It handles:
 
-### 1. Data Sources
-Utilizes shapefiles from the *Ayuntamiento de Madrid* for accessibility data (buzzers, sidewalks, constructions).
+* **Route calculation:** Integrates with Google Routes API.
+* **Geospatial data processing:** Intersects the calculated route with local accessibility datasets (sidewalks, buzzers, constructions) using `geopandas`.
+* **Street View analysis:** Fetches Street View images and sends them to Gemini API for crosswalk detection.
+* **Accessibility evaluation:** Computes the overall accessibility score for the route.
+* **API exposure:** Provides a RESTful API (`/api/route_analysis`) for the frontend to request route information and accessibility analysis.
 
-### 2. Google APIs
-Integrates Google Routes API for route generation and Google Street View Static API for image fetching.
+## Frontend Overview
+The frontend, built with **React** and bundled with Vite, provides the interactive user experience. It handles:
 
-### 3. Processing
-Raw datasets are loaded, cleaned, transformed using `geopandas`, and stored as `.geojson` files in `data/processed/`. Route polylines are decoded using `googlemaps.convert`.
-
-## Street View Image Processing & AI Integration
-NavAI uses the Google Street View Static API to fetch high-resolution images along the determined route. These images are then processed using OpenAI Vision API for advanced computer vision tasks, primarily to detect the presence of crosswalks. This analysis directly feeds into our accessibility scoring system, providing granular and real-time insights into pedestrian infrastructure.
-
-## Accesibility evaluation
-Our custom `evaluate_accessibility` function determines a route's score (0-100) based on:
-
-The proportion of detected crosswalks that have acoustic buzzers nearby.
-The average width of sidewalks along the route, ensuring compliance with accessibility standards (e.g., >= 1.5 meters). This provides a quantifiable metric for route inclusivity.
+* **User input:** Captures origin, destination, and impairment type.
+* **API communication:** Sends route requests to the Flask backend.
+* **Map visualization:** Displays the route and accessibility data using `react-leaflet`.
+* **Dynamic UI:** Manages loading states, displays the accessibility score, and provides a smooth navigation flow.
 
 ## Requirements
-To run the project, ensure you have both Python and Node.js installed.
+To run the project, ensure you have both **Python (3.8+)** and **Node.js (14+)** installed.
+
+### API Keys
+You will need **one Google API Key** enabled for:
+* Routes API
+* Maps Static API
+* Street View Static API
+* Cloud Text-to-Speech API (when Further Work is implemented)
+* Generative Language API
+
+**Configuration:** Create a file named `API_KEY.txt` in the root directory of your project (same level as `README.md`). Paste your single Google API Key into the first line of this file. **Important:** `API_KEY.txt` is already included in `.gitignore` for security reasons.
 
 ### Python dependencies
 Install Python dependencies listed in `requirements.txt`:
@@ -105,40 +107,48 @@ npm install
 Follow these steps to run NavAI:
 1. Clone the repository:
 ```bash
-git clone https://github.com/luisoballos/NavAI
+git clone [https://github.com/luisoballos/NavAI](https://github.com/luisoballos/NavAI)
+cd NavAI
 ```
+
+2. Create API_KEY.txt and paste your Google API Key there:
+```bash
+touch API_KEY.txt
+```
+
 3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 npm install
 ```
-4. Prepare your API Keys:
-   Ensure your Google API Key and OpenAI API Key are correctly configured (e.g., in `API_KEY.txt` or environment variables as per your setup).
 
-5. Run the Python Backend (in a separate terminal):
-   This script will process data, generate the map HTML (`route_map.html`), and the accessibility score JSON (`accessibility_score.json`). You must run this whenever you want to update the map or score.
+4. Run the Python Backend (Flask API):
+Open a new terminal and navigate to the project root:
+
 ```bash
-python src/main.py
+flask --app src/app run --debug
 ```
 
-6. Run the React Frontend (in another separate terminal):
+This will start the Flask development server, typically on `http://127.0.0.1:5000` or `http://localhost:5000`. The --debug flag is useful for development as it provides auto-reloading and debugging information.
+
+5. Run the React Frontend (in another separate terminal):
    This will start the Vite development server.
 ```bash
 npm run dev
 ```
 
-7. Access the application:
+6. Access the application:
    Open your web browser and navigate to the URL provided by Vite (e.g., `http://localhost:5173`). Use the navigation links within the app to access the map page.
 
 ## Further Work & Future Vision
-NavAI is continuously evolving. Our long-term vision includes:
+NavAI is continuously evolving. My long-term vision includes:
 
-- **Enhanced Data Integration**: Incorporating more granular accessibility data points (e.g., curb cuts, ramps, surface textures, real-time obstacles).
-- **Indoor Navigation**: Extending accessibility guidance to public buildings and transportation hubs.
-- **Predictive Accessibility**: Utilizing machine learning to predict future accessibility challenges based on urban development plans.
-- **Community Contributions**: Implementing features for users to report and update accessibility information.
-- **Expanded Geographical Coverage**: Scaling the solution to other cities globally, adapting to local accessibility standards and data sources.
-- **Deep Learning Models**: Developing custom deep learning models for even more precise object detection and environmental analysis.
+- **Enhanced data integration**: Incorporating more granular accessibility data points (e.g., curb cuts, ramps, surface textures, real-time obstacles).
+- **Indoor navigation**: Extending accessibility guidance to public buildings and transportation hubs.
+- **Predictive accessibility**: Utilizing machine learning to predict future accessibility challenges based on urban development plans.
+- **Community contributions**: Implementing features for users to report and update accessibility information.
+- **Expanded geographical coverage**: Scaling the solution to other cities globally, adapting to local accessibility standards and data sources.
+- **Deep learning models**: Developing custom deep learning models for even more precise object detection and environmental analysis.
 
 ## Contributing
 Contributions are highly encouraged! Please feel free to fork the repository, open issues, and submit pull requests with your improvements and features.

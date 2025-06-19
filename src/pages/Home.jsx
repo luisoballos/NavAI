@@ -7,17 +7,42 @@ export const Home = () => {
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
   const [impairment, setImpairment] = useState(null); // 'wheelchair' o 'blind'
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSearch = () => {
-    // Enviar los datos al backend
-    // 1. Llamar a una API en tu backend de Python con origin, destination, impairment.
-    // 2. El backend procesaría la ruta, generaría el mapa HTML y la puntuación.
-    // 3. El backend devolvería una confirmación o la puntuación.
-    // 4. Navegarías a '/loading' y luego a '/navegation'.
-
-    // Para la demo actual, solo simularemos la navegación y el loading.
+  const handleSearch = async () => {
+    setLoading(true);
+    setError(null);
     console.log("Buscando ruta:", { origin, destination, impairment });
-    navigate('/loading'); // Navega a la pantalla de carga
+
+    try {
+      const response = await fetch('http://127.0.0.1:5000/api/route_analysis', { // ¡Asegúrate
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ origin, destination, impairment }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Error desconocido al obtener la ruta.');
+      }
+
+      const data = await response.json();
+      console.log("Datos de la ruta recibidos:", data);
+
+      // Save data to send it to Navigation.jsx
+      localStorage.setItem('routeData', JSON.stringify(data));
+
+      navigate('/navegation');
+
+    } catch (err) {
+      setError(err.message);
+      console.error("Error al buscar la ruta:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -30,9 +55,10 @@ export const Home = () => {
           <input
             type="text"
             id="origin-search"
-            placeholder="Set the origin"
+            placeholder="Set the origin (e.g., Plaza de España, Madrid)"
             value={origin}
             onChange={(e) => setOrigin(e.target.value)}
+            disabled={loading}
           />
         </div>
         <div className="search-input-group">
@@ -40,13 +66,16 @@ export const Home = () => {
           <input
             type="text"
             id="destination-search"
-            placeholder="Set the destination"
+            placeholder="Set the destination (e.g., Puerta del Sol, Madrid)"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
+            disabled={loading}
           />
         </div>
-        {/* Aquí podrías tener un botón de búsqueda que active handleSearch */}
-        <button className="search-button" onClick={handleSearch}>Search Route</button>
+        <button className="search-button" onClick={handleSearch} disabled={loading}>
+          {loading ? 'Buscando Ruta...' : 'Search Route'}
+        </button>
+        {error && <p className="error-message" style={{color: 'red'}}>{error}</p>}
       </div>
 
       <div className="impairment-section">
@@ -55,12 +84,14 @@ export const Home = () => {
           <button
             className={`impairment-button ${impairment === 'wheelchair' ? 'active' : ''}`}
             onClick={() => setImpairment('wheelchair')}
+            disabled={loading}
           >
             <img src="/wheelchair_icon.png" alt="Wheelchair impairment" />
           </button>
           <button
             className={`impairment-button ${impairment === 'blind' ? 'active' : ''}`}
             onClick={() => setImpairment('blind')}
+            disabled={loading}
           >
             <img src="/blind_icon.png" alt="Blind impairment" />
           </button>

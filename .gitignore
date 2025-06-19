@@ -30,3 +30,7 @@ notebooks/
 *.csv
 cache
 __*
+route_map.html
+image_analysis_results.json
+main.py
+plot.py
