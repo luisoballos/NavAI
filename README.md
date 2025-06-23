@@ -9,10 +9,14 @@ NavAI offers a unique set of functionalities for both end-users and urban develo
 * **Accessible Route Generation**:
     * Utilizes Google's Routes API for base routing.
     * Integrates custom accessibility data (sidewalk width, buzzer locations, construction zones) to create optimal accessible paths.
-    * Real-time crosswalk detection via AI (Google Gemini API): Analyzes Google Street View images along the route to identify and confirm the presence of crosswalks, enhancing route accuracy.
-    * Dynamic accessibility scoring: Each generated route receives an accessibility score (0-100) based on critical criteria:
-        * Percentage of crosswalks with acoustic buzzers: Reflects auditory guidance availability.
-        * Average sidewalk width: Ensures pathways meet accessibility standards (e.g., minimum 1.5 meters).
+    * Crosswalk detection via AI (Google Gemini API): Analyzes Google Street View images along the route to identify and confirm the presence of crosswalks, providing additional accessibility context for the user and future route optimization.
+    * Dynamic accessibility scoring and route segment categorization: Each generated route receives an accessibility score (0-100) based on an overall assessment of the route, and its individual segments are initially categorized based on `mean_sidewalk_width`. The categorization of each route segment is dynamically determined by the Python backend (`src/app.py`'s `analyze_segment_accessibility` function). The criteria for segment categorization are as follows:
+        * **Totalmente Accesible (green)**: Indicates segments that meet preferred accessibility standards. This category is primarily assigned if the `mean_sidewalk_width` is **sufficient** (greater than 1.5m). It can also be achieved if the segment was initially `Parcialmente Accesible` or `Desconocida` and has benefited from finished accessibility construction works, or if it was `Parcialmente Accesible` and contains acoustic buzzers.
+        * **Parcialmente Accesible (yellow)**: Suggests segments that might have some accessible features or passable, but suboptimal sidewalk width. This category is primarily assigned if `mean_sidewalk_width` is **suboptimal** (between 0.9m and 1.5m). It can also be achieved if the segment was initially `Poco Accesible` and contains acoustic buzzers.
+        * **Poco Accesible (red)**: Highlights segments with significant accessibility challenges. This category is primarily assigned if `mean_sidewalk_width` is **critically narrow** (less than 0.9m). It can also be assigned if the segment was initially `Desconocida` and contains acoustic buzzers.
+        * **Desconocida (grey)**: For segments where insufficient or no relevant geospatial data (like sidewalk width) is available to make an accurate assessment, and no other features (like buzzers or finished works) elevate its category.
+    
+    The overall `global_accessibility_score`: It is derived from the percentage of segments categorized as "Totalmente Accesible," providing a holistic view of the route's quality.
 
 * **Interactive Map Visualization (React-Leaflet)**:
     * Displays the generated accessible route.
@@ -20,14 +24,14 @@ NavAI offers a unique set of functionalities for both end-users and urban develo
     * Shows the route's start and end markers.
     * **Accessibility Legend**: Provides a clear visual guide to route segment accessibility (Fully Accessible, Partially Accessible, Poorly Accessible, Unknown).
 
-* **User-Centric Frontend (React & Vite)**:
-    * Intuitive User Interface: Allows users to set origin, destination, and select specific impairment types (e.g., wheelchair, visual impairment).
-    * Seamless User Flow: Includes dedicated `Home`, `Loading`, and `Navigation` (map view) pages for a smooth user experience.
-    * Dynamic Data Display: Presents the calculated accessibility score directly within the navigation interface.
+* **User-friendly Navigation Interface (React & Vite)**:
+    * Intuitive user interface: Allows users to set origin, destination, and select specific impairment types (wheelchair or visual impairment). In the current MVP, the selection of impairment types is implemented for future route customization, but does not yet affect the generated path.
+    * Seamless user flow: Includes dedicated `Home`, `Loading`, and `Navigation` (map view) pages for a smooth user experience.
+    * Dynamic data display: Presents the calculated accessibility score directly within the navigation interface.
 
-* **Urban Planning Insights (Backend Analytics)**:
+* **Urban Planning Insights (Database Analytics using Power BI)**:
     * Analyzes and visualizes improvements in accessibility infrastructure across Madrid.
-    * Year and district selector: Filter data for targeted analysis.
+    * Year and district selector: Filter data for targeted analysis .
     * KPI progress metrics: Track key performance indicators for accessibility improvements over time.
     * Comparative analysis: Compare changes in accessibility between selected years.
     * Interactive maps: Visualize the geographical distribution of accessibility improvements based on historical data.
@@ -41,24 +45,24 @@ The project is structured into distinct Python (backend/data processing) and Rea
 │   ├── processed/               # Cleaned and standardized GeoJSON data
 ├── public/                      # Static assets for the React app, including generated HTML map and JSON score
 │   └── (icons for React app)    # blind-icon.png and wheelchair-icon.png
+├── dashboards/                  # Power BI files
+│   └── Accesibilidad.pbix       # Accessibility dashboard in Power BI for urban planning insights
 ├── src/                         # Source code for both Python backend and React frontend
 │   ├── etl/                     # Python scripts for ETL processes (data fetching, cleaning, transformation)
 │   │   ├── get_route.py         # Fetches route polyline from Google Routes API
 │   │   ├── get_images.py        # Fetches Street View images
 │   │   └── etl_dataset.py       # Processes buzzers, constructions, and sidewalks datasets
-│   │   └── (other ETL related files)
 │   ├── image_analysis.py        # Python script for AI-powered image analysis (crosswalk detection)
-and map/score output
-│   ├── components/             # Reusable React UI components (e.g., Navbar, Footer, MapLegend)
-│   ├── pages/                  # React app pages (e.g., Home, Loading, Navegation, ErrorPage, Layout)
-│   ├── routes.jsx              # React Router setup for navigation
-│   ├── index.css               # Global CSS styles
-│   └── main.jsx                # React app entry point
-├── API_KEY.txt             # Placeholder for API keys
-├── requirements.txt            # Python project dependencies
-├── package.json                # Node.js/Vite project dependencies
-├── .gitignore                  # Files and directories to ignore in version control
-└── README.md                   # Project documentation
+│   ├── components/              # Reusable React UI components (e.g., Navbar, Footer, MapLegend)
+│   ├── pages/                   # React app pages (e.g., Home, Loading, Navegation, ErrorPage, Layout)
+│   ├── routes.jsx               # React Router setup for navigation
+│   ├── index.css                # Global CSS styles
+│   └── main.jsx                 # React app entry point
+├── API_KEY.txt                  # Placeholder for API keys
+├── requirements.txt             # Python project dependencies
+├── package.json                 # Node.js/Vite project dependencies
+├── .gitignore                   # Files and directories to ignore in version control
+└── README.md                    # Project documentation
 ```
 
 ## Backend Overview
@@ -107,7 +111,7 @@ npm install
 Follow these steps to run NavAI:
 1. Clone the repository:
 ```bash
-git clone [https://github.com/luisoballos/NavAI](https://github.com/luisoballos/NavAI)
+git clone https://github.com/luisoballos/NavAI
 cd NavAI
 ```
 
@@ -126,19 +130,19 @@ npm install
 Open a new terminal and navigate to the project root:
 
 ```bash
-flask --app src/app run --debug
+flask --app src/app.py run --debug
 ```
 
 This will start the Flask development server, typically on `http://127.0.0.1:5000` or `http://localhost:5000`. The --debug flag is useful for development as it provides auto-reloading and debugging information.
 
 5. Run the React Frontend (in another separate terminal):
-   This will start the Vite development server.
+This will start the Vite development server.
 ```bash
 npm run dev
 ```
 
 6. Access the application:
-   Open your web browser and navigate to the URL provided by Vite (e.g., `http://localhost:5173`). Use the navigation links within the app to access the map page.
+   Open your web browser and navigate to the URL provided by Vite (e.g., `http://localhost:5173`). Use the navigation links within the app to access the "Navegation" page to view the map.
 
 ## Further Work & Future Vision
 NavAI is continuously evolving. My long-term vision includes:

@@ -67,41 +67,66 @@ except Exception as e:
 
 def analyze_segment_accessibility(segment_line: LineString, buffer_threshold=0.0001):
     """
-    Segment analysis function (checks for intersection with buzzers and construction
-    zones, and calculates the mean sidewalk width).
+    Performs an accessibility analysis for a given route segment,
+    categorizing it based on sidewalk width, finished accessibility works, and buzzers.
     """
     segment_buffer = segment_line.buffer(buffer_threshold)
 
+    # Init
     category = "Desconocida"
-    mean_sidewalk_width = 0
-
-    # Check for intersection with acoustic buzzers
-    buzzers_intersect = gdf_buzzers[gdf_buzzers.intersects(segment_buffer)]
-    if not buzzers_intersect.empty:
-        category = "Parcialmente accesible"
-
-    # Check for intersection with construction works
-    constructions_intersect = gdf_madrid_works[gdf_madrid_works.intersects(segment_buffer)]
-    if not constructions_intersect.empty:
-        category = "Poco accesible"
+    mean_sidewalk_width = 0.0
 
     # Calculate mean sidewalk width
     sidewalks_intersect = gdf_sidewalks[gdf_sidewalks.intersects(segment_buffer)]
     if not sidewalks_intersect.empty and 'ANCHO_MEDIO' in sidewalks_intersect.columns:
         mean_sidewalk_width = sidewalks_intersect['ANCHO_MEDIO'].mean()
         # mean_sidewalk_width = round(sidewalks_intersect[sidewalk_width_column_name].mean(), 2)
-    else:
-        mean_sidewalk_width = 0.0
+    
+    # Determine initial category based on sidewalk width
+    CRITICAL_WIDTH_THRESHOLD = 0.9 # 0.8 is mean wheelchair width (subjective value)
+    SUBOPTIMAL_WIDTH_THRESHOLD = 1.5 # comfortable passing for two people or wheelchair + pedestrian (subjective value)
 
-    # Default
-    if category == "Desconocida":
+    if mean_sidewalk_width <= CRITICAL_WIDTH_THRESHOLD and mean_sidewalk_width > 0:
+        category = "Poco accesible"
+    elif mean_sidewalk_width <= SUBOPTIMAL_WIDTH_THRESHOLD and mean_sidewalk_width > 0:
+        category = "Parcialmente accesible"
+    elif mean_sidewalk_width > SUBOPTIMAL_WIDTH_THRESHOLD:
         category = "Totalmente accesible"
+    else: # If 0.0 or no data found
+        category = "Desconocida"
 
+    # Check for intersection with finished accessibility construction works
+    has_finished_works = not gdf_madrid_works[gdf_madrid_works.intersects(segment_buffer)].empty
+    # Check for intersection with acoustic buzzers
+    has_buzzers = not gdf_buzzers[gdf_buzzers.intersects(segment_buffer)].empty
+
+    # Check for intersections with finished construction works
+    # Finished works is strongly positive, unless it is extremely narrow
+    if has_finished_works:
+        if category == "Parcialmente accesible" or category == "Desconocida":
+            category = "Totalmente accesible"
+            
+    # Buzzers are significantly positive
+    elif has_buzzers:
+        if category == "Desconocida":
+            category = "Poco accesible"
+        elif category == "Poco accesible":
+            category = "Parcialmente accesible"
+        elif category == "Parcialmente accesible":
+            category = "Totalmente accesible"
+
+    # Check for segments with no data
+    if category == "Desconocida":
+        if has_buzzers:
+            category = "Poco accesible"
+
+
+    # Returns accessibility category and calculated mean sidewalk width
     return {
         "category": category,
         "mean_sidewalk_width": mean_sidewalk_width,
-        "has_buzzers": not buzzers_intersect.empty,
-        "has_constructions": not constructions_intersect.empty,
+        "has_buzzers": has_buzzers,
+        "has_constructions": has_finished_works,
     }
 
 
