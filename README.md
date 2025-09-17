@@ -77,10 +77,16 @@ The backend, built with Flask, serves as the brain of NavAI. It handles:
 ## Frontend Overview
 The frontend, built with **React** and bundled with Vite, provides the interactive user experience. It handles:
 
-* **User input:** Captures origin, destination, and impairment type.
+* **User input:** Captures origin, destination, and impairment type (see the [Home page](#image)).
 * **API communication:** Sends route requests to the Flask backend.
-* **Map visualization:** Displays the route and accessibility data using `react-leaflet`.
+* **Map visualization:** Displays the route and accessibility data using `react-leaflet` (see the [Map view page](#image)).
 * **Dynamic UI:** Manages loading states, displays the accessibility score, and provides a smooth navigation flow.
+
+### <a id="image"></a>
+| Home page | Map view |
+|-----------|----------|
+| ![Home page](src/assets/img/home_screen.png) | ![Map view](src/assets/img/map.png) |
+
 
 ## Requirements
 To run the project, ensure you have both **Python (3.8+)** and **Node.js (14+)** installed.
