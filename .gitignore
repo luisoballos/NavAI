@@ -34,3 +34,5 @@ route_map.html
 image_analysis_results.json
 src/main.py
 src/plot.py
+
+data/processed/*.geojson
