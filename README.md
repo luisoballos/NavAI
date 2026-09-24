@@ -1,6 +1,14 @@
 # NavAI: Accessible Urban Navigation for Madrid
 
-NavAI is an innovative application designed to enhance urban accessibility for people with disabilities in Madrid. By leveraging advanced AI (Computer Vision) and comprehensive geospatial data, NavAI provides real-time, accessible route navigation, addressing the critical need for inclusive urban mobility. Our core objective is to empower individuals with disabilities by offering reliable, detailed, and personalized navigation experiences, and to provide urban planners with actionable insights for infrastructure improvement.
+**Problem:** People with disabilities face significant barriers navigating cities. Existing routing apps (Google Maps, etc.) optimize for speed and distance, not accessibility. Sidewalk width, curb cuts, crosswalks, and ongoing construction aren't visible to these planners.
+
+**Solution:** NavAI combines computer vision (Gemini Vision API), geospatial analysis (GeoPandas), and real Madrid municipal data to score and rank accessible routes. Each route receives a 0-100 accessibility score, and segments are color-coded (green = fully accessible, yellow = partially, red = poor, grey = unknown) based on sidewalk width, crosswalks, buzzers, and construction zones.
+
+**For users:** A react-based map interface that shows accessible routes in real time with detailed segment-by-segment accessibility scores.
+
+**For urban planners:** A Power BI dashboard visualizing accessibility trends across Madrid districts and years, enabling data-driven infrastructure investment.
+
+**Live demo:** [navai-demo.vercel.app](link) (WIP)
 
 ## Key Features
 
