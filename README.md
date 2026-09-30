@@ -134,11 +134,13 @@ cd NavAI
 touch API_KEY.txt
 ```
 
-3. Install dependencies:
+3. Install dependencies and download Madrid accessibility data:
 ```bash
 pip install -r requirements.txt
 npm install
 ```
+
+Then download the [Madrid accessibility data](https://drive.google.com/file/d/1n-sPwx-_dKOasDa3frGq7YJZ4eqYmccT/view?usp=sharing) and add the three files in a folder ```/data/processed```.
 
 4. Run the Python Backend (Flask API):
 Open a new terminal and navigate to the project root:
