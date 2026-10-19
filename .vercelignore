@@ -1,0 +1,5 @@
+backend/
+requirements.txt
+src/app.py
+src/etl/
+src/image_analysis.py
