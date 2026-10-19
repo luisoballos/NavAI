@@ -18,16 +18,8 @@ CORS(app)
 ##### Init #####
 ################
 # Load Google API key
-API_KEY = None
-try:
-    with open('API_KEY.txt', 'r') as file:
-        API_KEY = file.readline().strip()
-except FileNotFoundError:
-    print("Error: API_KEY.txt not found.")
-    API_KEY = os.environ.get("GOOGLE_API_KEY")
-
-if API_KEY is None:
-    print("WARNING: Google API Key not loaded.")
+import os
+API_KEY = os.getenv('GOOGLE_API_KEY')
 
 ################
 ##### DDBB #####
@@ -222,5 +214,7 @@ def route_analysis():
         print(f"Error in /api/route_analysis route: {e}")
         return jsonify({"error": f"An error occurred while processing your request: {e}"}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+import os
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
